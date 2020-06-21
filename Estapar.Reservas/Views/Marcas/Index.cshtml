@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Estapar.Reservas.Models.Marca>
+
+@{
+    ViewData["Title"] = "Marcas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h1>Marcas</h1>
+
+<p>
+    <a asp-action="Create">Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inativo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @if (item.Inativo == false)
+                {
+                    <img src="~/img/ativo.png" />
+                }
+                else
+                {
+                    <img src="~/img/inativo.png" />
+                }
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Alterar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

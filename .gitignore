@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Estapar.Reservas/bin/Debug/netcoreapp3.1
+/.vs/Estapar.Reservas
+/Estapar.Reservas/obj
